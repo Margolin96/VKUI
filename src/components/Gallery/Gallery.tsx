@@ -181,7 +181,9 @@ class Gallery extends Component<GalleryProps, GalleryState> {
   }
 
   isDraggable () {
-    return this.state.layerWidth > this.state.containerWidth;
+    return this.props.align == 'center'
+      ? this.state.layerWidth > (this.state.containerWidth / 2)
+      : this.state.layerWidth > this.state.containerWidth;
   }
 
   /**
